@@ -290,6 +290,7 @@ header {
   background: var(--green);
   border-radius: 12px;
   padding: 28px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -297,8 +298,9 @@ header {
 }
 .link .description {
   color: var(--white);
-  /* constrain to two lines with an ellipsis if it's longer */
-  max-width: 48%;
+  /* fixed size per design */
+  width: 499px;
+  height: 67px;
   display: -webkit-box;
   /* standard property (where supported) and the webkit-prefixed fallback */
   line-clamp: 2;
@@ -349,6 +351,8 @@ header {
   .link .description {
     max-width: 100%;
     margin-bottom: 16px;
+    width: 100%;
+    height: auto;
   }
   .link .signup-form input[type="text"] {
     min-width: 100%;
