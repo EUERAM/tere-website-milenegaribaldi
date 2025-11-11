@@ -171,3 +171,186 @@ header {
 .text-right .number {
   margin-left: auto;
 }
+
+/* HERO */
+.hero {
+  padding: 80px 0;
+}
+.hero .container {
+  /* keep existing hero-specific container rules for backward compatibility */
+  gap: 40px;
+}
+
+/* Generic modifier class: any container with `columns` will layout children horizontally */
+.container.columns {
+  display: flex;
+  /* ensure both columns stretch to the same height so we can align content to the bottom */
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .container.columns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.hero .left-col,
+.hero .right-col {
+  flex: 1;
+}
+.hero .left-col {
+  max-width: 55%;
+  /* allow vertical layout so we can push the button group to the bottom */
+  display: flex;
+  flex-direction: column;
+}
+.hero .left-col .description {
+  /* make the hero paragraph occupy 80% of the left column */
+  width: 80%;
+}
+.hero .right-col {
+  max-width: 45%;
+}
+
+/* HERO BUTTONS (button-link style) */
+.hero-buttons {
+  /* push the button group to the bottom of the left column */
+  margin-top: auto;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  /* fixed dimensions requested */
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  width: 260px;
+  height: 66.77px;
+  padding: 0; /* center content with flex */
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  line-height: 1;
+}
+.hero-buttons .btn-primary:hover,
+.hero-buttons .btn-secondary:hover {
+  opacity: 0.95;
+}
+.hero-buttons i {
+  /* larger fixed icon box and glyph */
+  margin-right: 12px;
+  width: 37px;
+  height: 36.75px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; /* glyph size inside the box */
+}
+
+/* Responsive: slightly smaller buttons on narrow screens */
+@media (max-width: 900px) {
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    font-size: 16px;
+    /* reduced fixed size on narrow screens */
+    width: 220px;
+    height: 56px;
+    padding: 0;
+  }
+  .hero-buttons i {
+    /* smaller icon on narrow screens */
+    width: 30px;
+    height: 28px;
+    font-size: 18px;
+    margin-right: 8px;
+  }
+}
+
+/* LINK SECTION */
+.link {
+  padding: 60px 0;
+}
+.link .container {
+  background: var(--green);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.link .description {
+  color: var(--white);
+  /* constrain to two lines with an ellipsis if it's longer */
+  max-width: 48%;
+  display: -webkit-box;
+  /* standard property (where supported) and the webkit-prefixed fallback */
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.link .signup-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.link .signup-form input[type="text"] {
+  /* make the email input larger for desktop */
+  padding: 16px 20px;
+  border-radius: 6px;
+  border: none;
+  /* increased width per request; adjust if you want wider */
+  min-width: 560px;
+  font-size: 20px;
+}
+.link .signup-form input[type="text"]::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+.link .signup-form .button {
+  background: var(--black);
+  color: var(--white);
+  /* make the text smaller but keep the button size */
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+.link .signup-form .button:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .link .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .link .description {
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+  .link .signup-form input[type="text"] {
+    min-width: 100%;
+  }
+}
+
+.hero .flex {
+  align-items: flex-end;
+}
