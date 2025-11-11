@@ -205,6 +205,9 @@ header {
   /* allow vertical layout so we can push the button group to the bottom */
   display: flex;
   flex-direction: column;
+  /* align items to the bottom and keep a comfortable gap between description and buttons */
+  justify-content: flex-end;
+  gap: 20px;
 }
 .hero .left-col .description {
   /* make the hero paragraph occupy 80% of the left column */
@@ -216,10 +219,10 @@ header {
 
 /* HERO BUTTONS (button-link style) */
 .hero-buttons {
-  /* push the button group to the bottom of the left column */
-  margin-top: auto;
+  /* button group stays at the bottom via parent justify-content; keep a comfortable gap */
+  margin-top: 0;
   display: flex;
-  gap: 16px;
+  gap: 20px;
   align-items: center;
 }
 .hero-buttons .btn-primary,
@@ -251,12 +254,13 @@ header {
 .hero-buttons i {
   /* larger fixed icon box and glyph */
   margin-right: 12px;
-  width: 37px;
-  height: 36.75px;
+  /* slightly larger icon box */
+  width: 42px;
+  height: 42px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px; /* glyph size inside the box */
+  font-size: 28px; /* glyph size inside the box */
 }
 
 /* Responsive: slightly smaller buttons on narrow screens */
@@ -270,11 +274,11 @@ header {
     padding: 0;
   }
   .hero-buttons i {
-    /* smaller icon on narrow screens */
-    width: 30px;
-    height: 28px;
-    font-size: 18px;
-    margin-right: 8px;
+    /* slightly larger responsive icon */
+    width: 34px;
+    height: 32px;
+    font-size: 20px;
+    margin-right: 10px;
   }
 }
 
